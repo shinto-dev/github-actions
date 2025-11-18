@@ -1,5 +1,5 @@
 name: First Workflow
-on: workflow_dispatch
+on: workflow_dispatch # when to run it
 
 jobs:
   first_job:
@@ -9,3 +9,14 @@ jobs:
         run: echo "Hello"
       - name: Print goodbye
         run: echo "Done!, Bye"
+
+# If you need to run multiple shell commands (or multi-line commands, 
+# e.g., for readability), you can easily do so by adding the pipe symbol (|) as a value after the run: key.
+#
+# Like this:
+# ...
+# run: |
+#     echo "First output"
+#     echo "Second output"
+#
+# This will run both commands in one step.
