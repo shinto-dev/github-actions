@@ -1,0 +1,9 @@
+name: Output context
+on: workflow_dispatch
+
+jobs:
+    info:
+        runs-on: ubuntu-22.04
+        steps:
+            - name: Output Github context
+              run: echo "${{ toJson(github) }}"

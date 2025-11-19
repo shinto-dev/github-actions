@@ -1,5 +1,5 @@
 name: Second Action
-on: [push, workflow_dispatch]
+on: [push, workflow_dispatch] # workflow_dispatch is for triggering workflow manually
 
 jobs:
   test:
