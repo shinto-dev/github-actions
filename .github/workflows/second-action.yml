@@ -1,0 +1,13 @@
+name: Second Action
+on: push
+
+jobs:
+  test:
+    runs-on: ubuntu-22.04 # This already has many pre-installed tools including Node.js, you can find them on https://github.com/actions/runner-images/blob/main/images/ubuntu/Ubuntu2404-Readme.md
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v5 # Note that this is a GitHub-provided action: https://github.com/marketplace/actions/checkout, you can find other actions on the GitHub Marketplace.
+      - name: Install dependencies
+        run: npm ci
+      - name: Run tests
+        run: npm test
