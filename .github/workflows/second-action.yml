@@ -11,3 +11,15 @@ jobs:
         run: npm ci
       - name: Run tests
         run: npm test
+  deploy:
+    runs-on: ubuntu-22.04
+    needs: test # Depends on test job
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v5
+      - name: Install dependencies
+        run: npm ci
+      - name: Build the project
+        run: npm run build
+      - name: Deploy
+        run: echo "Deploying..."
