@@ -1,0 +1,11 @@
+name: Action with Issue creation trigger
+on: 
+    issues:
+        types: [opened]
+
+jobs:
+    output-info:
+        runs-on: ubuntu-22.04
+        steps:
+            - name: Output event details
+              run: echo "Issue opened: ${{ github.event.issue.title }}"
